@@ -4,7 +4,6 @@ import vue from '@vitejs/plugin-vue';
 import mozaicSassConfig from '@mozaic-ds/css-dev-tools/sassConfig';
 import mozaicPluginList from '@mozaic-ds/css-dev-tools/postcssPluginConfig';
 import { includePaths } from '@mozaic-ds/css-dev-tools/sassConfig';
-import path from 'path';
 
 const filteredMozaicPluginList = mozaicPluginList.filter(
   ({ postcssPlugin }) => postcssPlugin !== 'stylelint'
@@ -19,7 +18,8 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        includePaths: includePaths,
+        api: "legacy",
+        includePaths,
       },
     },
     postcss: {
