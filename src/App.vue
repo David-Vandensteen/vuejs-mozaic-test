@@ -2,6 +2,13 @@
   <div>
     <h1>Test Mozaic</h1>
     <p>Ce projet est un test pour Mozaic.</p>
+
+    <div class="container example-container-loader">
+      <MLoader v-bind="{}" size="s" />
+      <MLoader v-bind="{}" size="m" />
+      <MLoader v-bind="{}" size="l" />
+    </div>
+
     <div>
       <MButton label="Button" />
     </div>
@@ -71,8 +78,10 @@
 </template>
 
 <script>
+
 import { MButton } from '@mozaic-ds/vue-3/src/components/button';
 import ArrowArrowRight16 from '@mozaic-ds/web-components/public/icons/ArrowArrowRight16.js';
+import MLoader from '@mozaic-ds/vue-3/src/components/loader/MLoader.vue';
 
 if (!customElements.get('navigation-arrow-arrow--right-16px')) {
   customElements.define(
@@ -90,7 +99,19 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 @import 'settings-tools/all-settings';
+
+// $local-config: (
+//   font-path: 'static/assets/fonts',
+// );
+
+// @include import-font-families();
+
+// body {
+//   @include set-font-family();
+// }
+
 @import 'components/c.badge';
 
 @import 'components/c.checkbox';
