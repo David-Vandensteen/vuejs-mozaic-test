@@ -66,10 +66,20 @@
     </div>
   </div>
 
+  <div><navigation-arrow-arrow--right-16px></navigation-arrow-arrow--right-16px></div>
+
 </template>
 
 <script>
 import { MButton } from '@mozaic-ds/vue-3/src/components/button';
+import ArrowArrowRight16 from '@mozaic-ds/web-components/public/icons/ArrowArrowRight16.js';
+
+if (!customElements.get('navigation-arrow-arrow--right-16px')) {
+  customElements.define(
+    'navigation-arrow-arrow--right-16px',
+    ArrowArrowRight16,
+  );
+}
 
 export default {
   name: 'App',
